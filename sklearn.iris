@@ -1,0 +1,15 @@
+from sklearn import datasets
+iris = datasets.load_iris()
+print(list(iris.keys()))
+import numpy as np
+print(iris['data'])
+print(iris['target'])
+print(iris['data'].shape)
+y = (iris['target'] == 2).astype(np.int)
+print(y)
+x = iris['data'][:, 3:]
+print(x)
+clf = LogisticRegression()
+clf.fit(x,y)
+example = clf.predict(([[2.6]]))
+print(example)
